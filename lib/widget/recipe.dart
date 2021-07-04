@@ -6,10 +6,14 @@ class Recipe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0x201F2C),
+      color: Color(0xFF201F2C),
       padding: EdgeInsets.symmetric(horizontal: 32),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(
+            height: 24,
+          ),
           Text(
             "Инструкция длс приготовления",
             style: TextStyle(
@@ -20,8 +24,17 @@ class Recipe extends StatelessWidget {
             height: 24,
           ),
           _instruction("Первая"),
+          SizedBox(
+            height: 16,
+          ),
           _instruction("Вторая"),
+          SizedBox(
+            height: 16,
+          ),
           _instruction("Третья"),
+          SizedBox(
+            height: 40,
+          )
         ],
       ),
     );
@@ -30,6 +43,7 @@ class Recipe extends StatelessWidget {
 
 Widget _instruction(String instruction) {
   return Container(
+    color: Color(0xFF201F2C),
     child: Row(
       children: [
         CircleAvatar(

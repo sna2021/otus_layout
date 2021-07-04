@@ -37,10 +37,13 @@ class CoctailName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 32),
-      color: const Color(0x1A1927),
+      color: const Color(0xFF1A1927),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(
+            height: 33,
+          ),
           Row(
             children: [
               Text(

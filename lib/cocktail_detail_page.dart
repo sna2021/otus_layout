@@ -23,29 +23,16 @@ class CocktailDetailPage extends StatelessWidget {
     ///для того чтобы весь контент поместился, необходимо использовать SingleChildScrollView()
     ///
     return Scaffold(
-        backgroundColor: Colors.black,
         body: ListView(children: [
-          Column(
-            children: [
-              SizedBox(
-                height: 57,
-              ),
-              Picture(),
-              SizedBox(
-                height: 33,
-              ),
-              CoctailName(),
-              Ingredients(),
-              SizedBox(
-                height: 24,
-              ),
-              Recipe(),
-              SizedBox(
-                height: 24,
-              ),
-              Stars(),
-            ],
-          ),
-        ]));
+      Column(
+        children: [
+          Picture(),
+          CoctailName(),
+          Ingredients(),
+          Recipe(),
+          Stars(),
+        ],
+      ),
+    ]));
   }
 }

@@ -6,27 +6,37 @@ class Stars extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0x1A1927),
+      color: Color(0xFF1A1927),
       padding: EdgeInsets.symmetric(horizontal: 36),
-      child: Row(
+      child: Column(
         children: [
-          circleStarFilled(),
           SizedBox(
-            width: 16,
+            height: 24,
           ),
-          circleStarFilled(),
-          SizedBox(
-            width: 16,
+          Row(
+            children: [
+              SizedBox(
+                height: 24,
+              ),
+              circleStarFilled(),
+              SizedBox(
+                width: 16,
+              ),
+              circleStarFilled(),
+              SizedBox(
+                width: 16,
+              ),
+              circleStarFilled(),
+              SizedBox(
+                width: 16,
+              ),
+              circleStarNotFilled(),
+              SizedBox(
+                width: 16,
+              ),
+              circleStarNotFilled(),
+            ],
           ),
-          circleStarFilled(),
-          SizedBox(
-            width: 16,
-          ),
-          circleStarNotFilled(),
-          SizedBox(
-            width: 16,
-          ),
-          circleStarNotFilled(),
         ],
       ),
     );

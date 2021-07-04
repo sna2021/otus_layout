@@ -6,9 +6,13 @@ class Ingredients extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.black,
       padding: EdgeInsets.symmetric(horizontal: 32.0),
       child: Column(
         children: [
+          SizedBox(
+            height: 24,
+          ),
           Center(
             child: Text(
               "Ингредиенты:",
@@ -123,6 +127,9 @@ class Ingredients extends StatelessWidget {
               )
             ],
           ),
+          SizedBox(
+            height: 24,
+          )
         ],
       ),
     );
