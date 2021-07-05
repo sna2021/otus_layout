@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homework/models/models.dart';
 
 Widget _buildInfo(String labelText, String labelChip) {
+// MARK:  Container не выполняет никакой роли здесь
   return Container(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -11,6 +12,7 @@ Widget _buildInfo(String labelText, String labelChip) {
           labelText,
           style: TextStyle(color: Colors.white),
         ),
+        // можно использовать const
         SizedBox(
           height: 7,
         ),
@@ -23,6 +25,7 @@ Widget _buildInfo(String labelText, String labelChip) {
             ),
           ),
         ),
+       // можно использовать const
         SizedBox(
           height: 32,
         )
@@ -43,11 +46,13 @@ class CoctailName extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // MARK: можно использовать const
           SizedBox(
             height: 33,
           ),
           Row(
             children: [
+            // MARK:  необходимо использовать Flexible
               Text(
                 cocktail.name,
                 style: TextStyle(
@@ -59,6 +64,7 @@ class CoctailName extends StatelessWidget {
               SvgPicture.asset('assets/images/icon_hart.svg')
             ],
           ),
+          // MARK: можно использовать const
           SizedBox(
             height: 30,
           ),
