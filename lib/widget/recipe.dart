@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:homework/models/models.dart';
 
 class Recipe extends StatelessWidget {
-  const Recipe({Key key}) : super(key: key);
+  const Recipe({Key key, this.cocktail}) : super(key: key);
+  final Cocktail cocktail;
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +25,7 @@ class Recipe extends StatelessWidget {
           SizedBox(
             height: 24,
           ),
-          _instruction("Первая"),
-          SizedBox(
-            height: 16,
-          ),
-          _instruction("Вторая"),
-          SizedBox(
-            height: 16,
-          ),
-          _instruction("Третья"),
+          _instruction(cocktail.instruction),
           SizedBox(
             height: 40,
           )
@@ -42,24 +36,17 @@ class Recipe extends StatelessWidget {
 }
 
 Widget _instruction(String instruction) {
+  var instructions = instruction.split("-");
+  instructions.removeAt(0);
+  var newInstructions = instructions
+      .map((e) => TextSpan(
+            children: [
+              TextSpan(text: "•", style: TextStyle(color: Colors.white)),
+              TextSpan(text: e, style: TextStyle(color: Colors.white)),
+            ],
+          ))
+      .toList();
   return Container(
-    color: Color(0xFF201F2C),
-    child: Row(
-      children: [
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 2.0,
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        Text(
-          instruction,
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        )
-      ],
-    ),
-  );
+      color: Color(0xFF201F2C),
+      child: Flexible(child: Text.rich(TextSpan(children: newInstructions))));
 }

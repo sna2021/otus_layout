@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:homework/models/models.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homework/widget/coctail_name.dart';
 import 'package:homework/widget/ingredients.dart';
 import 'package:homework/widget/picture.dart';
@@ -26,10 +25,18 @@ class CocktailDetailPage extends StatelessWidget {
         body: ListView(children: [
       Column(
         children: [
-          Picture(),
-          CoctailName(),
-          Ingredients(),
-          Recipe(),
+          Picture(
+            cocktail: cocktail,
+          ),
+          CoctailName(
+            cocktail: cocktail,
+          ),
+          Ingredients(
+            cocktail: cocktail,
+          ),
+          Recipe(
+            cocktail: cocktail,
+          ),
           Stars(),
         ],
       ),

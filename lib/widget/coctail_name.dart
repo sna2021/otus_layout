@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:homework/models/models.dart';
 
 Widget _buildInfo(String labelText, String labelChip) {
   return Container(
@@ -31,7 +32,8 @@ Widget _buildInfo(String labelText, String labelChip) {
 }
 
 class CoctailName extends StatelessWidget {
-  const CoctailName({Key key}) : super(key: key);
+  const CoctailName({Key key, this.cocktail}) : super(key: key);
+  final Cocktail cocktail;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ class CoctailName extends StatelessWidget {
           Row(
             children: [
               Text(
-                "Арбузное мохито",
+                cocktail.name,
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.white,
@@ -60,9 +62,9 @@ class CoctailName extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          _buildInfo("Категория коктейля", "Cocktail"),
-          _buildInfo("Тип коктейлей", "Алкогольный"),
-          _buildInfo("Тип стекла", "Хайбол"),
+          _buildInfo("Категория коктейля", cocktail.category.value),
+          _buildInfo("Тип коктейлей", cocktail.cocktailType.value),
+          _buildInfo("Тип стекла", cocktail.glassType.value),
         ],
       ),
     );

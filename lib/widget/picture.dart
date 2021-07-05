@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:homework/models/src/model/cocktail.dart';
 
 class Picture extends StatelessWidget {
-  const Picture({Key key}) : super(key: key);
+  final Cocktail cocktail;
 
+  const Picture({this.cocktail, Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,11 +14,16 @@ class Picture extends StatelessWidget {
         horizontal: 28,
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 57,
-          ),
           SvgPicture.asset('assets/images/icon_back.svg'),
+          Spacer(),
+          Image.network(
+            cocktail.drinkThumbUrl,
+            height: 375,
+            width: 320,
+          ),
           Spacer(),
           SvgPicture.asset('assets/images/icon_out.svg'),
         ],
