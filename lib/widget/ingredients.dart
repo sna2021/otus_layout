@@ -10,14 +10,17 @@ class Ingredients extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
+       //MARK: можно использовать const
       padding: EdgeInsets.symmetric(horizontal: 32.0),
       child: Column(children: _ingredient(cocktail.ingredients)),
     );
   }
 }
 
+//MARK: Название метода должно содержать в себе действие
 List<Widget> _ingredient(Iterable<IngredientDefinition> list) {
-  var widgetList = <Widget>[];
+  var widgetList = <Widget>[]; 
+ //MARK: можно использовать const для всех SizedBox
   widgetList.add(SizedBox(height: 24));
   widgetList.add(
     Center(
@@ -43,8 +46,10 @@ List<Widget> _ingredient(Iterable<IngredientDefinition> list) {
   return widgetList;
 }
 
+//MARK: Название метода должно содержать в себе действие
 Widget __ingredientElem(String ingredient, String amount) {
   return Row(children: [
+    //MARK: Нужно использовать Flexible
     Text(
       ingredient,
       style: TextStyle(
