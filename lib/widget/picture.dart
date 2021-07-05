@@ -13,6 +13,7 @@ class Picture extends StatelessWidget {
       padding: EdgeInsets.symmetric(
         horizontal: 28,
       ),
+      //MARK: Тут нужно использовать Stack. Тк кнопки накладываются поверх изображения
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
