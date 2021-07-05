@@ -45,8 +45,10 @@ Widget _instruction(String instruction) {
               TextSpan(text: e, style: TextStyle(color: Colors.white)),
             ],
           ))
-      .toList();
+      .toList(); 
+  //MARK: По сути тут не нужен container т.к он только задает цвет. А это цвет задан в контейнере выше.
   return Container(
       color: Color(0xFF201F2C),
+      // MARK: Тут не нужен Flexible
       child: Flexible(child: Text.rich(TextSpan(children: newInstructions))));
 }
